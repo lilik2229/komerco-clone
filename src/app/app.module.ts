@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 
+import { AppMaterialModule } from './app-material.module';
+
 import { AppComponent } from './app.component';
 
 @NgModule({
