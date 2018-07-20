@@ -6,4 +6,7 @@ export class AuthStubService {
   public isLogin(): boolean{
     return true
   }
+
+  public setOnAuthStateChanged(): void{
+  }
 }
