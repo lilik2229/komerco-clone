@@ -8,6 +8,7 @@ import { HomeComponent } from './home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ArticlesComponent } from './articles/articles.component';
+import { ArticleComponent } from './articles/article/article.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { ArticlesComponent } from './articles/articles.component';
     AppMaterialModule,
     AppRoutingModule
   ],
-  declarations: [HomeComponent, HeaderComponent, FooterComponent, ArticlesComponent]
+  declarations: [HomeComponent, HeaderComponent, FooterComponent, ArticlesComponent, ArticleComponent]
 })
 export class HomeModule { }

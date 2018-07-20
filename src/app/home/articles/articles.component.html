@@ -10,10 +10,9 @@
     </div>
 
     <div class="app-articles-content-container">
-        <ng-container *ngFor="let article of articles">
-            <p> {{this.article.description}} </p>
-            <p> {{this.article.imageSrc}} </p>
-            <p> {{this.article.link}} </p>
+        <ng-container
+            *ngFor="let article of articles">
+            <app-article [article]="article"></app-article>
         </ng-container>
     </div>
     
