@@ -8,5 +8,13 @@
             料理が楽しくなる特集をお届け
         </cite>
     </div>
+
+    <div class="app-articles-content-container">
+        <ng-container *ngFor="let article of articles">
+            <p> {{this.article.description}} </p>
+            <p> {{this.article.imageSrc}} </p>
+            <p> {{this.article.link}} </p>
+        </ng-container>
+    </div>
     
 </div>
