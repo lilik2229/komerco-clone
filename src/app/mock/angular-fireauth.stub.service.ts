@@ -1,12 +1,12 @@
-import { Observable, of } from "rxjs";
+import { Observable, of } from 'rxjs';
 
 import { MockArticles } from '../shared/models/article/articles.mock';
 
 export class AngularFireAuthStubService {
   auth = {
-    currentUser:"currentUser",
-    
-    signInWithEmailAndPassword(email:string,password:string):Promise<boolean>{
+    currentUser: 'currentUser',
+
+    signInWithEmailAndPassword(email: string, password: string): Promise<boolean> {
       return new Promise((resolve, reject) => {
         setTimeout(() => {
           resolve(true);
@@ -15,11 +15,11 @@ export class AngularFireAuthStubService {
         setTimeout(() => {
           reject(false);
         }, 1);
-      }); 
+      });
     },
 
-    signOut(): void{},
+    signOut(): void {},
 
-    onAuthStateChanged(): void{}    
+    onAuthStateChanged(): void {}
   };
 }

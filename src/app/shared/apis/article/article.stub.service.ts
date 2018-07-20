@@ -5,12 +5,12 @@ import { MockArticles } from '../../models/article/articles.mock';
 
 const articles = MockArticles;
 export class ArticleStubService {
-  
-  public getArticlesWithCountLimit(countOfArticles:number) :Observable<Array<Article>>{
-    return of(articles);    
+
+  public getArticlesWithCountLimit(countOfArticles: number): Observable<Array<Article>> {
+    return of(articles);
   }
 
-  public getArticles() :Observable<Array<Article>>{
+  public getArticles(): Observable<Array<Article>> {
     return of(articles);
   }
 }

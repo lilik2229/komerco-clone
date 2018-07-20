@@ -13,18 +13,18 @@ export class ArticleService {
     private store: AngularFirestore
   ) { }
 
-  public getArticlesWithCountLimit(countOfArticles:number) :Observable<Array<Article>>{
+  public getArticlesWithCountLimit(countOfArticles: number): Observable<Array<Article>> {
     return this.store
       .collection<Article>('articles',
-                           ref => ref.orderBy("updatedAt","desc").limit(countOfArticles))
+                           ref => ref.orderBy('updatedAt', 'desc').limit(countOfArticles))
       .valueChanges();
   }
 
-    public getArticles() :Observable<Array<Article>>{
+    public getArticles(): Observable<Array<Article>> {
       return this.store
         .collection<Article>('articles',
-                             ref => ref.orderBy("updatedAt","desc"))
-        .valueChanges();      
+                             ref => ref.orderBy('updatedAt', 'desc'))
+        .valueChanges();
     }
-  
+
 }

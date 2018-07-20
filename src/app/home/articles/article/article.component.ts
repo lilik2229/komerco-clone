@@ -9,7 +9,7 @@ import { Article } from '../../../shared/models/article/article';
 })
 export class ArticleComponent implements OnInit {
   @Input() article: Article;
-  
+
   constructor() { }
 
   ngOnInit() {}

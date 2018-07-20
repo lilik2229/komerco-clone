@@ -16,15 +16,15 @@ export class AuthGuard implements CanActivate {
 
   constructor(
     private router: Router,
-    private authService: AuthService    
+    private authService: AuthService
   ) { }
-  
+
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-      const redirectUrlAfterLogout: string = '/top';
-      
-      if(this.authService.isLogin()){
+      const redirectUrlAfterLogout = '/top';
+
+      if (this.authService.isLogin()) {
         return true;
       }
 

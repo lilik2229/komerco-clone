@@ -1,5 +1,5 @@
-import { NgModule }              from '@angular/core';
-import { RouterModule, Routes }  from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AuthGuard } from './shared/apis/auth/auth.guard';
 
@@ -28,7 +28,7 @@ const appRoutes: Routes = [
     redirectTo: 'home'
   }
 ];
- 
+
 @NgModule({
   imports: [
     RouterModule.forRoot(appRoutes)

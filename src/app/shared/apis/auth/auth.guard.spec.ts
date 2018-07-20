@@ -17,7 +17,7 @@ describe('AuthGuard', () => {
       providers: [
         AuthGuard,
         {provide: AuthService, useClass: AuthStubService },
-      ]      
+      ]
     });
   });
 
