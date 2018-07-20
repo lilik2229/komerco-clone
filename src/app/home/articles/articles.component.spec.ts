@@ -2,7 +2,8 @@ import { Component, Input } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Article } from '../../shared/models/article/article';
-
+import { ArticleService } from '../../shared/apis/article/article.service';
+import { ArticleStubService } from '../../shared/apis/article/article.stub.service';
 import { ArticlesComponent } from './articles.component';
 
 @Component({selector: 'app-article', template: ''})
@@ -19,6 +20,9 @@ describe('ArticlesComponent', () => {
       declarations: [
         ArticlesComponent,
         ArticleStubComponent
+      ],
+      providers: [
+        {provide: ArticleService, useClass: ArticleStubService },
       ]
     })
     .compileComponents();

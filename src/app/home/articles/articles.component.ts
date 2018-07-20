@@ -27,12 +27,11 @@ export class ArticlesComponent implements OnInit {
       .subscribe(
         (res) =>{
           res.forEach((doc)=>{
-            const article:Article =
-              new Article(
-                doc.description,
-                doc.imageSrc,
-                doc.link
-              );
+            const article:Article = new Article(
+              doc.description,
+              doc.imageSrc,
+              doc.link
+            );
             this.articles.push(article);
           })
         },
