@@ -1,0 +1,16 @@
+.app-articles-header-container{
+    background-color: #EEEEEE;
+    padding-top: 20px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+.app-articles-header-title{
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.app-articles-header-cite{
+    font-size: 12px;
+}
