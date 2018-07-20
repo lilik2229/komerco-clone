@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { environment } from '../environments/environment';
 
 import { AppMaterialModule } from './app-material.module';
@@ -24,6 +25,7 @@ import { AppComponent } from './app.component';
     // firebase系のモジュール
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    AngularFirestoreModule,
     // 切り分けたモジュール
     AppMaterialModule,
     AppRoutingModule,
