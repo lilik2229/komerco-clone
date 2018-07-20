@@ -23,24 +23,20 @@ export class ArticlesComponent implements OnInit {
 
   private setArticles(countOfArticles :number) :void{
     this.articleService
-      .getArticles(countOfArticles)
-      .then(
-        (querySnapshot)=>{
-          querySnapshot.forEach((doc)=> {
+      .getArticlesWithCountLimit(countOfArticles)
+      .subscribe(
+        (res) =>{
+          res.forEach((doc)=>{
             const article:Article =
               new Article(
-                doc.data().description,
-                doc.data().imageSrc,
-                doc.data().link
+                doc.description,
+                doc.imageSrc,
+                doc.link
               );
             this.articles.push(article);
-          });
-        }
-      )
-      .catch(
-        (error)=>{
-          console.log(error);
-        }
+          })
+        },
+        (error) => console.log(error)
       );
   }
 
