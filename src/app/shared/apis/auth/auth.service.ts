@@ -13,12 +13,12 @@ export class AuthService {
     private router: Router
   ) { }
 
-  public login(email:string,password:string): Promise<any>{
+  public login(email: string, password: string): Promise<any> {
     return this.afAuth
       .auth
-      .signInWithEmailAndPassword(email,password)
+      .signInWithEmailAndPassword(email, password)
       .catch(
-        (error)=>{
+        (error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
           if (errorCode === 'auth/wrong-password') {
@@ -31,27 +31,27 @@ export class AuthService {
       );
   }
 
-  public logout():void {
+  public logout(): void {
     this.afAuth.auth.signOut();
   }
 
-  public isLogin(): boolean{
+  public isLogin(): boolean {
     return !!this.afAuth.auth.currentUser;
   }
 
-  public setOnAuthStateChanged(): void{
-    const redirectUrlAfterLogin: string = '/home';
-    const redirectUrlAfterLogout: string = '/top';
-    
+  public setOnAuthStateChanged(): void {
+    const redirectUrlAfterLogin = '/home';
+    const redirectUrlAfterLogout = '/top';
+
     this.afAuth.auth.onAuthStateChanged(
-      ()=>{
-        if(this.isLogin()){
+      () => {
+        if (this.isLogin()) {
           // ログイン時の動作
           this.router.navigateByUrl(redirectUrlAfterLogin);
-        }else{
+        } else {
           // ログアウト時の動作
           this.router.navigateByUrl(redirectUrlAfterLogout);
-        };
+        }
       }
     );
   }

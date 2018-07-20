@@ -1,5 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { Article } from '../../../shared/models/article/article';
+import { MockArticle } from '../../../shared/models/article/article.mock';
+
 import { ArticleComponent } from './article.component';
 
 describe('ArticleComponent', () => {
@@ -16,6 +19,7 @@ describe('ArticleComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ArticleComponent);
     component = fixture.componentInstance;
+    component.article = MockArticle;
     fixture.detectChanges();
   });
 

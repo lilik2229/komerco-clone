@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 
 import { Article } from '../../models/article/article';
 
@@ -13,18 +13,18 @@ export class ArticleService {
     private store: AngularFirestore
   ) { }
 
-  public getArticles(countOfArticles?:number) :Promise<any>{
-    let articlesRef =
-      this.store
-      .collection('articles')
-      .ref
-      .orderBy("updatedAt","desc");
-    
-    if(countOfArticles !== undefined){
-      articlesRef = articlesRef.limit(countOfArticles);
-    }
-    
-    return articlesRef.get();
+  public getArticlesWithCountLimit(countOfArticles: number): Observable<Array<Article>> {
+    return this.store
+      .collection<Article>('articles',
+                           ref => ref.orderBy('updatedAt', 'desc').limit(countOfArticles))
+      .valueChanges();
   }
-  
+
+    public getArticles(): Observable<Array<Article>> {
+      return this.store
+        .collection<Article>('articles',
+                             ref => ref.orderBy('updatedAt', 'desc'))
+        .valueChanges();
+    }
+
 }

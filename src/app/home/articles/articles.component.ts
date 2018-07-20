@@ -10,37 +10,32 @@ import { Article } from '../../shared/models/article/article';
   styleUrls: ['./articles.component.css']
 })
 export class ArticlesComponent implements OnInit {
-  articles:Article[] = new Array;
-  
+  articles: Article[] = new Array;
+
   constructor(
-    private articleService :ArticleService 
+    private articleService: ArticleService
   ) { }
 
   ngOnInit() {
-    const countOfArticles:number = 3;
+    const countOfArticles = 3;
     this.setArticles(countOfArticles);
   }
 
-  private setArticles(countOfArticles :number) :void{
+  private setArticles(countOfArticles: number): void {
     this.articleService
-      .getArticles(countOfArticles)
-      .then(
-        (querySnapshot)=>{
-          querySnapshot.forEach((doc)=> {
-            const article:Article =
-              new Article(
-                doc.data().description,
-                doc.data().imageSrc,
-                doc.data().link
-              );
+      .getArticlesWithCountLimit(countOfArticles)
+      .subscribe(
+        (res) => {
+          res.forEach((doc) => {
+            const article: Article = new Article(
+              doc.description,
+              doc.imageSrc,
+              doc.link
+            );
             this.articles.push(article);
           });
-        }
-      )
-      .catch(
-        (error)=>{
-          console.log(error);
-        }
+        },
+        (error) => console.log(error)
       );
   }
 
