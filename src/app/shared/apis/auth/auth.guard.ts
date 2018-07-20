@@ -21,8 +21,7 @@ export class AuthGuard implements CanActivate {
   
   canActivate(
     next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {      
-      // return true; //大変良くないけど、開発中はguardなしで
+    state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
       const redirectUrlAfterLogout: string = '/top';
       
       if(this.authService.isLogin()){
