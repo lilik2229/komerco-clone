@@ -1,0 +1,11 @@
+.app-header-container{
+    position:fixed;
+    width: 100%;
+    z-index:100;
+    top:0;
+}
+
+.app-header-title{
+    width: 100%;
+    text-align: center;
+}
