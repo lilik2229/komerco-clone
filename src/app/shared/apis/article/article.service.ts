@@ -15,13 +15,15 @@ export class ArticleService {
 
   public getArticlesWithCountLimit(countOfArticles:number) :Observable<Array<Article>>{
     return this.store
-      .collection<Article>('articles',ref => ref.orderBy("updatedAt","desc"))
+      .collection<Article>('articles',
+                           ref => ref.orderBy("updatedAt","desc").limit(countOfArticles))
       .valueChanges();
   }
 
     public getArticles() :Observable<Array<Article>>{
       return this.store
-        .collection<Article>('articles',ref => ref.orderBy("updatedAt","desc"))
+        .collection<Article>('articles',
+                             ref => ref.orderBy("updatedAt","desc"))
         .valueChanges();      
     }
   

@@ -1,11 +1,24 @@
 import { TestBed, inject } from '@angular/core/testing';
+import {
+    RouterTestingModule
+} from '@angular/router/testing';
+import { AngularFireAuth } from 'angularfire2/auth';
 
+import {
+  AngularFireAuthStubService
+} from '../../../mock/angular-fireauth.stub.service';
 import { AuthService } from './auth.service';
 
 describe('AuthService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [AuthService]
+      imports: [
+        RouterTestingModule
+      ],
+      providers: [
+        AuthService,
+        {provide: AngularFireAuth, useClass: AngularFireAuthStubService },
+      ]
     });
   });
 
