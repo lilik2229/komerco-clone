@@ -1,5 +1,4 @@
 import { Observable , of } from 'rxjs';
-import { AngularFirestore } from 'angularfire2/firestore';
 
 import { Article } from '../../models/article/article';
 import { MockArticles } from './response';
