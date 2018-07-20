@@ -1,0 +1,19 @@
+<div class="app-articles-container">
+    
+    <div class="app-articles-header-container">
+        <div class="app-articles-header-title">
+            コメルコバナシ
+        </div>
+        <cite class="app-articles-header-cite">
+            料理が楽しくなる特集をお届け
+        </cite>
+    </div>
+
+    <div class="app-articles-content-container">
+        <ng-container
+            *ngFor="let article of articles">
+            <app-article [article]="article"></app-article>
+        </ng-container>
+    </div>
+    
+</div>
