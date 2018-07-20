@@ -1,0 +1,27 @@
+<div class="login-container">    
+    <div class="login-field">
+        <mat-form-field>
+            <input
+                matInput
+                placeholder="メールアドレスを入力して下さい"
+                [(ngModel)]="email"
+            >
+        </mat-form-field>
+
+        <mat-form-field>
+            <input
+                matInput
+                type="password"
+                placeholder="パスワードを入力して下さい"
+                [(ngModel)]="password"
+            >
+        </mat-form-field>
+        <button
+            mat-raised-button
+            color="primary"
+            (click)="login(email,password)"
+        >ログイン</button>       
+    </div>
+
+</div>
+

@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyBELzrjrxHNyMzVGRpKL4yyzt1eV-L3iKY",
+    authDomain: "komerco-clone-dev.firebaseapp.com",
+    databaseURL: "https://komerco-clone-dev.firebaseio.com",
+    projectId: "komerco-clone-dev",
+    storageBucket: "komerco-clone-dev.appspot.com",
+    messagingSenderId: "101932769623"
+  }
 };
 
 /*
