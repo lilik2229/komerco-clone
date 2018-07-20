@@ -1,6 +1,6 @@
 .article-container{
     display: inline-block;
-    width: 300px;
+    width: 250px;
     height: 250px;
     white-space: normal;
     vertical-align:top;
@@ -9,8 +9,8 @@
 }
 
 .article-image{
-    width: 300px;
-    height: 187.5px;
+    width: 250px;
+    height: 154px;
     border-radius: 5px;
 }
 
