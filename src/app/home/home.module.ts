@@ -7,6 +7,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { HomeComponent } from './home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { ArticlesComponent } from './articles/articles.component';
 
 @NgModule({
   imports: [
@@ -14,6 +15,6 @@ import { FooterComponent } from './footer/footer.component';
     AppMaterialModule,
     AppRoutingModule
   ],
-  declarations: [HomeComponent, HeaderComponent, FooterComponent]
+  declarations: [HomeComponent, HeaderComponent, FooterComponent, ArticlesComponent]
 })
 export class HomeModule { }
