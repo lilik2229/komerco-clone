@@ -1,14 +1,32 @@
 import { NgModule }              from '@angular/core';
 import { RouterModule, Routes }  from '@angular/router';
 
+import { AuthGuard } from './shared/auth/auth.guard';
+
 import { AppComponent } from './app.component';
 import { TopComponent } from './top/top.component';
+import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [
-  // {path: '', component: RecipeComponent, pathMatch: 'full'
-  //  , canActivate: [AuthGuard]},
-  {path: 'top', component: TopComponent},
-  {path: '**', redirectTo: 'top'}
+  {
+    path: '',
+    component: HomeComponent,
+    pathMatch: 'full',
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'top',
+    component: TopComponent
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: '**',
+    redirectTo: 'home'
+  }
 ];
  
 @NgModule({
@@ -19,7 +37,7 @@ const appRoutes: Routes = [
     RouterModule
   ],
   providers: [
-    // AuthGuard
+    AuthGuard
   ]
 })
 export class AppRoutingModule {}

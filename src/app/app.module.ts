@@ -9,6 +9,7 @@ import { AppMaterialModule } from './app-material.module';
 import { AppRoutingModule } from './app-routing.module';
 
 import { TopModule } from './top/top.module';
+import { HomeModule } from './home/home.module';
 
 import { AppComponent } from './app.component';
 
@@ -26,7 +27,8 @@ import { AppComponent } from './app.component';
     // 切り分けたモジュール
     AppMaterialModule,
     AppRoutingModule,
-    TopModule
+    TopModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

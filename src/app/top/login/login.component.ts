@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from 'angularfire2/auth';
-import { auth } from 'firebase';
 
 import { AuthService } from '../../shared/auth/auth.service';
 
@@ -15,10 +13,20 @@ export class LoginComponent implements OnInit {
     private authService: AuthService
   ) {}
   
-  ngOnInit() {}
+  ngOnInit() {
+    this.logout();
+    // ログイン/ログアウト時の動作を設定
+    this.authService.setOnAuthStateChanged();
+  }
   
   login(email:string,password:string):void {
-    this.authService.login(email,password);
+    this.authService
+      .login(email,password)
+      .then(
+        // ログイン後,コンポーネントに実施させる処理はここに書く
+        // ログイン失敗時も実行される
+        // ページ遷移はsetOnAuthStateChangedで実施されるので、ここには不要
+      );
   }
   
   logout():void {
