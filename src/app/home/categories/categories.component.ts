@@ -12,7 +12,8 @@ import { Category } from '../../shared/models/category/category';
 export class CategoriesComponent implements OnInit {
   @Input() countOfCategories: number;
   categories: Category[] = new Array;
-
+  moreLink: string;
+  
   constructor(
     private categoryService: CategoryService
   ) { }
@@ -20,6 +21,7 @@ export class CategoriesComponent implements OnInit {
   ngOnInit() {
     const countOfCategories = 4;
     this.setCategories(countOfCategories);
+    this.moreLink = '/categories';
   }
 
   private setCategories(countOfCategories: number): void {
