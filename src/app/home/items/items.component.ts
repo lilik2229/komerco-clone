@@ -15,6 +15,7 @@ export class ItemsComponent implements OnInit {
   @Input() itemsSortOrder: ItemsSortOrder;
   @Input() countOfItems: number;
   items: Item[] = new Array;
+  moreLink: string;
 
   constructor(
     private itemService: ItemService
@@ -22,6 +23,15 @@ export class ItemsComponent implements OnInit {
 
   ngOnInit() {
     this.setItems(this.countOfItems, this.itemsSortOrder);
+    this.setMoreLink(this.itemsSortOrder);
+  }
+
+  private setMoreLink(itemsSortOrder: ItemsSortOrder): void {
+    if (itemsSortOrder === ItemsSortOrder.Popular) {
+      this.moreLink = '/items/popular';
+    } else {
+      this.moreLink = '/items/new';
+    }
   }
 
   private setItems(countOfItems: number, itemsSortOrder: ItemsSortOrder): void {

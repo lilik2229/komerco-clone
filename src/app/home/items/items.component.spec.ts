@@ -14,6 +14,11 @@ class ItemStubComponent {
   @Input() item: Item;
 }
 
+@Component({selector: 'app-more', template: ''})
+class MoreStubComponent {
+  @Input() url: string;
+}
+
 describe('ItemsComponent', () => {
   let component: ItemsComponent;
   let fixture: ComponentFixture<ItemsComponent>;
@@ -22,7 +27,8 @@ describe('ItemsComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         ItemsComponent,
-        ItemStubComponent
+        ItemStubComponent,
+        MoreStubComponent
       ],
       providers: [
         {provide: ItemService, useClass: ItemStubService },
