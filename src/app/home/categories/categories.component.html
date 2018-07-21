@@ -4,8 +4,7 @@
     <div class="app-categories-content-container">
         <ng-container
             *ngFor="let category of categories">
-            <p>{{category.title}}</p>
-            <!-- <app-category [item]="item"></app-category> -->
+            <app-category [category]="category"></app-category>
         </ng-container>
     </div>
 </div>

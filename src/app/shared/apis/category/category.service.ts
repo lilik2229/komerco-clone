@@ -16,7 +16,7 @@ export class CategoryService {
   public getCategoriesWithCountLimit(countOfCategories: number):
   Observable<Array<Category>> {
     return this.store
-      .collection<Category>('articles',
+      .collection<Category>('categories',
                             ref => ref.orderBy('updatedAt', 'desc')
                             .limit(countOfCategories)
                            )

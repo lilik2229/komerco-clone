@@ -35,12 +35,12 @@ export class CategoriesComponent implements OnInit {
     let newCategories: Category[] = new Array;
     
     res.forEach((doc) => {
-      const article: Category = new Category(
-        doc.description,
+      const category: Category = new Category(
+        doc.title,
         doc.imageSrc,
-        doc.link
+        doc.categoryId
       );
-      newCategories.push(article);
+      newCategories.push(category);
     });
     this.categories = newCategories;
   }
