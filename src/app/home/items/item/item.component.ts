@@ -8,8 +8,8 @@ import { Item } from '../../../shared/models/item/item';
   styleUrls: ['./item.component.css']
 })
 export class ItemComponent implements OnInit {
-  @Input() item:Item;
-  
+  @Input() item: Item;
+
   constructor() { }
 
   ngOnInit() {

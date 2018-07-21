@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   readonly itemsSortOrderPopular = ItemsSortOrder.Popular;
   readonly itemsSortOrderNew = ItemsSortOrder.New;
   readonly countOfItems = 8;
-  
+
   constructor() { }
 
   ngOnInit() {

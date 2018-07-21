@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { ItemsSortOrder } from './items/itemsSortOrder';
 
 import { HomeComponent } from './home.component';
 
@@ -8,6 +10,13 @@ class HeaderStubComponent {}
 
 @Component({selector: 'app-articles', template: ''})
 class ArticlesStubComponent {}
+
+@Component({selector: 'app-items', template: ''})
+class ItemsStubComponent {
+  @Input() title: string;
+  @Input() itemsSortOrder: ItemsSortOrder;
+  @Input() countOfItems: number;
+}
 
 @Component({selector: 'app-footer', template: ''})
 class FooterStubComponent {}
@@ -22,6 +31,7 @@ describe('HomeComponent', () => {
         HomeComponent,
         HeaderStubComponent,
         ArticlesStubComponent,
+        ItemsStubComponent,
         FooterStubComponent
       ]
     })

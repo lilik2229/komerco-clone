@@ -26,5 +26,5 @@ export class ItemService {
                         ref => ref.orderBy('updatedAt', 'desc').limit(countOfArticles))
       .valueChanges();
   }
-  
+
 }

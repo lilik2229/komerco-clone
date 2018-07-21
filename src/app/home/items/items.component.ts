@@ -15,27 +15,27 @@ export class ItemsComponent implements OnInit {
   @Input() itemsSortOrder: ItemsSortOrder;
   @Input() countOfItems: number;
   items: Item[] = new Array;
-  
+
   constructor(
     private itemService: ItemService
   ) { }
 
   ngOnInit() {
-    this.setItems(this.countOfItems,this.itemsSortOrder);
+    this.setItems(this.countOfItems, this.itemsSortOrder);
   }
 
-  private setItems(countOfItems: number,itemsSortOrder: ItemsSortOrder): void {
+  private setItems(countOfItems: number, itemsSortOrder: ItemsSortOrder): void {
     let items$;
-    if(itemsSortOrder === ItemsSortOrder.Popular){
+    if (itemsSortOrder === ItemsSortOrder.Popular) {
       items$ = this.itemService.getPopularItemsWithCountLimit(countOfItems);
-    }else{
-      items$ =this.itemService.getNewItemsWithCountLimit(countOfItems);
+    } else {
+      items$ = this.itemService.getNewItemsWithCountLimit(countOfItems);
     }
 
     items$.subscribe(
       (res) => {
-        res.forEach((doc)=>{
-          const item:Item = new Item(              
+        res.forEach((doc) => {
+          const item: Item = new Item(
             doc.title,
             doc.imageSrc,
             doc.price
@@ -45,6 +45,6 @@ export class ItemsComponent implements OnInit {
       },
       (error) => console.log(error)
     );
-    
+
   }
 }
