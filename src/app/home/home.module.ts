@@ -13,6 +13,7 @@ import { ItemsComponent } from './items/items.component';
 import { ItemComponent } from './items/item/item.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { CategoryComponent } from './categories/category/category.component';
+import { MoreComponent } from './shared/more/more.component';
 
 @NgModule({
   imports: [
@@ -29,7 +30,8 @@ import { CategoryComponent } from './categories/category/category.component';
     ItemsComponent,
     ItemComponent,
     CategoriesComponent,
-    CategoryComponent
+    CategoryComponent,
+    MoreComponent
   ]
 })
 export class HomeModule { }
