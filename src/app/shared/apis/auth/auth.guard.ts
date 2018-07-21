@@ -22,13 +22,14 @@ export class AuthGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-      const redirectUrlAfterLogout = '/top';
+      return true;
+    //   const redirectUrlAfterLogout = '/top';
 
-      if (this.authService.isLogin()) {
-        return true;
-      }
+    //   if (this.authService.isLogin()) {
+    //     return true;
+    //   }
 
-      this.router.navigateByUrl(redirectUrlAfterLogout);
-      return false;
+    //   this.router.navigateByUrl(redirectUrlAfterLogout);
+    //   return false;
     }
 }
