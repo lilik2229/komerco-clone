@@ -1,20 +1,20 @@
 service cloud.firestore {
   match /databases/{database}/documents {
-  
-    match /articles/{article} {
-      function isSignedIn() {
-         return request.auth != null;
-      }
-      
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    match /articles/{article} {      
       allow read: if isSignedIn();
       allow write: if false;
     }
     
     match /items/{item} {
-      function isSignedIn() {
-         return request.auth != null;
-      }
-      
+      allow read: if isSignedIn();
+      allow write: if false;
+    }
+
+    match /categories/{category} {      
       allow read: if isSignedIn();
       allow write: if false;
     }
