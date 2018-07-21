@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   readonly itemsSortOrderNew = ItemsSortOrder.New;
   readonly countOfItems = 8;
   readonly countOfCategories = 4;
-  
+
   constructor() { }
 
   ngOnInit() {

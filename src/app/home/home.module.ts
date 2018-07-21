@@ -20,6 +20,16 @@ import { CategoryComponent } from './categories/category/category.component';
     AppMaterialModule,
     AppRoutingModule
   ],
-  declarations: [HomeComponent, HeaderComponent, FooterComponent, ArticlesComponent, ArticleComponent, ItemsComponent, ItemComponent, CategoriesComponent, CategoryComponent]
+  declarations: [
+    HomeComponent,
+    HeaderComponent,
+    FooterComponent,
+    ArticlesComponent,
+    ArticleComponent,
+    ItemsComponent,
+    ItemComponent,
+    CategoriesComponent,
+    CategoryComponent
+  ]
 })
 export class HomeModule { }

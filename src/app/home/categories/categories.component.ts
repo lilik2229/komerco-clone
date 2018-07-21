@@ -10,9 +10,9 @@ import { Category } from '../../shared/models/category/category';
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent implements OnInit {
-  @Input() countOfCategories:number;
+  @Input() countOfCategories: number;
   categories: Category[] = new Array;
-  
+
   constructor(
     private categoryService: CategoryService
   ) { }
@@ -22,7 +22,7 @@ export class CategoriesComponent implements OnInit {
     this.setCategories(countOfCategories);
   }
 
-  private setCategories(countOfCategories: number): void {    
+  private setCategories(countOfCategories: number): void {
     this.categoryService
       .getCategoriesWithCountLimit(countOfCategories)
       .subscribe(
@@ -31,9 +31,9 @@ export class CategoriesComponent implements OnInit {
       );
   }
 
-  private updateCategories(res): void{
-    let newCategories: Category[] = new Array;
-    
+  private updateCategories(res): void {
+    const newCategories: Category[] = new Array;
+
     res.forEach((doc) => {
       const category: Category = new Category(
         doc.title,

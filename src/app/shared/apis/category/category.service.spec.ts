@@ -1,11 +1,18 @@
 import { TestBed, inject } from '@angular/core/testing';
+import { AngularFirestore } from 'angularfire2/firestore';
 
+import {
+  AngularFirestoreStubService
+} from '../../../mock/angular-firestore.stub.service';
 import { CategoryService } from './category.service';
 
 describe('CategoryService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [CategoryService]
+      providers: [
+        CategoryService,
+        {provide: AngularFirestore, useClass: AngularFirestoreStubService }
+      ]
     });
   });
 

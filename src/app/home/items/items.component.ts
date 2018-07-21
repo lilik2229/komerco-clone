@@ -38,8 +38,8 @@ export class ItemsComponent implements OnInit {
     );
   }
 
-  private updateItems(res): void{
-    let newItems: Item[] = new Array;
+  private updateItems(res): void {
+    const newItems: Item[] = new Array;
 
     res.forEach((doc) => {
       const item: Item = new Item(
@@ -51,5 +51,5 @@ export class ItemsComponent implements OnInit {
     });
     this.items = newItems;
   }
-  
+
 }

@@ -1,5 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { Category } from '../../../shared/models/category/category';
+import { MockCategory } from '../../../shared/models/category/category.mock';
+
 import { CategoryComponent } from './category.component';
 
 describe('CategoryComponent', () => {
@@ -16,6 +19,7 @@ describe('CategoryComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CategoryComponent);
     component = fixture.componentInstance;
+    component.category = MockCategory;
     fixture.detectChanges();
   });
 

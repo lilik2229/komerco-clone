@@ -21,7 +21,7 @@ export class ArticlesComponent implements OnInit {
     this.setArticles(countOfArticles);
   }
 
-  private setArticles(countOfArticles: number): void {    
+  private setArticles(countOfArticles: number): void {
     this.articleService
       .getArticlesWithCountLimit(countOfArticles)
       .subscribe(
@@ -30,9 +30,9 @@ export class ArticlesComponent implements OnInit {
       );
   }
 
-  private updateArticles(res): void{
-    let newArticles: Article[] = new Array;
-    
+  private updateArticles(res): void {
+    const newArticles: Article[] = new Array;
+
     res.forEach((doc) => {
       const article: Article = new Article(
         doc.description,
