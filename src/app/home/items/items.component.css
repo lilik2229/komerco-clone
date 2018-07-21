@@ -1,4 +1,4 @@
-.items-container{ 
+.app-items-container{ 
     background-color: #EEEEEE;
     padding-top: 10px;
     padding-right: 20px;
@@ -6,7 +6,14 @@
     padding-left: 20px;
 }
 
-.items-component-title{
+.app-items-component-title{
     font-weight: bold;
     font-size: 14px;
+}
+
+.app-items-content-container{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-auto-rows: 420px;
 }

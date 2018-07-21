@@ -1,4 +1,11 @@
-<div class="items-container">
-    <div class="items-component-title">{{this.title}}</div>
+<div class="app-items-container">
+    <div class="app-items-component-title">{{this.title}}</div>
+
+    <div class="app-items-content-container">
+        <ng-container
+            *ngFor="let item of items">
+            <app-item [item]="item"></app-item>
+        </ng-container>
+    </div>
 </div>
 

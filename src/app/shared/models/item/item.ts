@@ -8,8 +8,8 @@ export class Item {
     imageSrc: string,
     price: number
   ) {
-    title = this.title;
-    imageSrc = this.imageSrc;
-    price = this.price;
+    this.title = title;
+    this.imageSrc = imageSrc;
+    this.price = price;
   }
 }

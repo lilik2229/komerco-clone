@@ -1,0 +1,18 @@
+.app-item-container{
+    width: 100%;
+    height: 400px;
+}
+.app-item-image{
+    border-radius: 5px;
+    width: 100%;
+    height: 350px;
+}
+
+.app-item-title{
+    font-size: 14px;
+}
+
+.app-item-price{
+    margin-top: -3px;
+    font-size: 12px;
+}
