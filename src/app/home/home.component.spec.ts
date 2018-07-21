@@ -18,6 +18,11 @@ class ItemsStubComponent {
   @Input() countOfItems: number;
 }
 
+@Component({selector: 'app-categories', template: ''})
+class CategoriesStubComponent {
+  @Input() countOfCategories: number;
+}
+
 @Component({selector: 'app-footer', template: ''})
 class FooterStubComponent {}
 
@@ -32,6 +37,7 @@ describe('HomeComponent', () => {
         HeaderStubComponent,
         ArticlesStubComponent,
         ItemsStubComponent,
+        CategoriesStubComponent,
         FooterStubComponent
       ]
     })
