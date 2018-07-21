@@ -20,11 +20,11 @@ export class ArticleService {
       .valueChanges();
   }
 
-    public getArticles(): Observable<Array<Article>> {
-      return this.store
-        .collection<Article>('articles',
-                             ref => ref.orderBy('updatedAt', 'desc'))
-        .valueChanges();
-    }
+  public getArticles(): Observable<Array<Article>> {
+    return this.store
+      .collection<Article>('articles',
+                           ref => ref.orderBy('updatedAt', 'desc'))
+      .valueChanges();
+  }
 
 }
