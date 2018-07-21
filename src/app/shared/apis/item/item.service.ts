@@ -19,4 +19,12 @@ export class ItemService {
                         ref => ref.orderBy('views', 'desc').limit(countOfArticles))
       .valueChanges();
   }
+
+  public getNewItemsWithCountLimit(countOfArticles: number): Observable<Array<Item>> {
+    return this.store
+      .collection<Item>('items',
+                        ref => ref.orderBy('updatedAt', 'desc').limit(countOfArticles))
+      .valueChanges();
+  }
+  
 }
