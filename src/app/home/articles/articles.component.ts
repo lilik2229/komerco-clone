@@ -17,7 +17,7 @@ export class ArticlesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const countOfArticles = 3;
+    const countOfArticles = 7;
     this.setArticles(countOfArticles);
   }
 

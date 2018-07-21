@@ -1,7 +1,11 @@
 <app-header></app-header>
 
 <div class="app-home-container">
-  <app-articles></app-articles>  
+    <app-articles></app-articles>
+    <app-items
+        title="人気順"
+        [itemsSortOrder]=this.itemsSortOrderPopular
+    ></app-items>
 </div>
 
 <app-footer></app-footer>
