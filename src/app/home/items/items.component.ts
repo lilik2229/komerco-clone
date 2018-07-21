@@ -33,18 +33,23 @@ export class ItemsComponent implements OnInit {
     }
 
     items$.subscribe(
-      (res) => {
-        res.forEach((doc) => {
-          const item: Item = new Item(
-            doc.title,
-            doc.imageSrc,
-            doc.price
-          );
-          this.items.push(item);
-        });
-      },
+      (res) => this.updateItems(res),
       (error) => console.log(error)
     );
-
   }
+
+  private updateItems(res): void{
+    let newItems: Item[] = new Array;
+
+    res.forEach((doc) => {
+      const item: Item = new Item(
+        doc.title,
+        doc.imageSrc,
+        doc.price
+      );
+      newItems.push(item);
+    });
+    this.items = newItems;
+  }
+  
 }

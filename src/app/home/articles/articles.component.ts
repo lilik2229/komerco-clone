@@ -21,22 +21,26 @@ export class ArticlesComponent implements OnInit {
     this.setArticles(countOfArticles);
   }
 
-  private setArticles(countOfArticles: number): void {
+  private setArticles(countOfArticles: number): void {    
     this.articleService
       .getArticlesWithCountLimit(countOfArticles)
       .subscribe(
-        (res) => {
-          res.forEach((doc) => {
-            const article: Article = new Article(
-              doc.description,
-              doc.imageSrc,
-              doc.link
-            );
-            this.articles.push(article);
-          });
-        },
+        (res) => this.updateArticles(res),
         (error) => console.log(error)
       );
   }
 
+  private updateArticles(res): void{
+    let newArticles: Article[] = new Array;
+    
+    res.forEach((doc) => {
+      const article: Article = new Article(
+        doc.description,
+        doc.imageSrc,
+        doc.link
+      );
+      newArticles.push(article);
+    });
+    this.articles = newArticles;
+  }
 }
