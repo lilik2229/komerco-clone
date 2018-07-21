@@ -12,6 +12,11 @@ class CategoryStubComponent {
   @Input() category: Category;
 }
 
+@Component({selector: 'app-more', template: ''})
+class MoreStubComponent {
+  @Input() url: string;
+}
+
 describe('CategoriesComponent', () => {
   let component: CategoriesComponent;
   let fixture: ComponentFixture<CategoriesComponent>;
@@ -20,7 +25,8 @@ describe('CategoriesComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         CategoriesComponent,
-        CategoryStubComponent
+        CategoryStubComponent,
+        MoreStubComponent
       ],
       providers: [
         {provide: CategoryService, useClass: CategoryStubService },

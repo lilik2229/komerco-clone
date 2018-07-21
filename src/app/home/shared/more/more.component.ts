@@ -6,8 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./more.component.css']
 })
 export class MoreComponent implements OnInit {
-  @Input() url:string;
-  
+  @Input() url: string;
+
   constructor() { }
 
   ngOnInit() {
