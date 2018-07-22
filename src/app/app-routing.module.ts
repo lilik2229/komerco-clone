@@ -6,6 +6,7 @@ import { AuthGuard } from './shared/apis/auth/auth.guard';
 import { AppComponent } from './app.component';
 import { TopComponent } from './top/top.component';
 import { HomeComponent } from './home/home.component';
+import { ItemListComponent } from './items/item-list.component';
 
 const appRoutes: Routes = [
   {
@@ -21,6 +22,11 @@ const appRoutes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'items',
+    component: ItemListComponent,
     canActivate: [AuthGuard]
   },
   {
