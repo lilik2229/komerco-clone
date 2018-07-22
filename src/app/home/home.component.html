@@ -9,7 +9,9 @@
         [countOfItems]=this.countOfItems
         [isShowMoreItem] =false
     ></app-items>
-    <app-more [url]="morePopularItemsLink"></app-more>
+    <app-more
+        class="app-home-more"
+        [url]="morePopularItemsLink"></app-more>
     
     <app-items
         title="新着順"
@@ -17,12 +19,16 @@
         [countOfItems]=this.countOfItems
         [isShowMoreItem] =false
     ></app-items>
-    <app-more [url]="moreNewItemsLink"></app-more>
+    <app-more
+        class="app-home-more"
+        [url]="moreNewItemsLink"></app-more>
     
     <app-categories
         [countOfCategories]=this.countOfCategories
     ></app-categories>
-    <app-more [url]="moreCategoriesLink"></app-more>
+    <app-more
+        class="app-home-more"
+        [url]="moreCategoriesLink"></app-more>
     
 </div>
 
