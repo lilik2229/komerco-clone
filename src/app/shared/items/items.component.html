@@ -6,8 +6,10 @@
             *ngFor="let item of items">
             <app-item [item]="item"></app-item>
         </ng-container>
+        <div *ngIf=isShowMoreItem (click)="addItems()" class="app-items-more-container">
+            もっと見る
+        </div>
     </div>
 
-    <!-- <app-more [url]="moreLink"></app-more> -->
 </div>
 

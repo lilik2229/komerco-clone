@@ -10,7 +10,7 @@ import { ItemsSortOrder } from '../shared/items/itemsSortOrder';
 })
 export class ItemListComponent implements OnInit {
   itemsSortOrder = ItemsSortOrder.Popular;
-  readonly countOfItems = 20;
+  readonly countOfItems = 1;
   
   constructor(
     private route: ActivatedRoute

@@ -7,6 +7,7 @@
         title="人気順"
         [itemsSortOrder]=this.itemsSortOrderPopular
         [countOfItems]=this.countOfItems
+        [isShowMoreItem] =false
     ></app-items>
     <app-more [url]="morePopularItemsLink"></app-more>
     
@@ -14,6 +15,7 @@
         title="新着順"
         [itemsSortOrder]=this.itemsSortOrderNew
         [countOfItems]=this.countOfItems
+        [isShowMoreItem] =false
     ></app-items>
     <app-more [url]="moreNewItemsLink"></app-more>
     
