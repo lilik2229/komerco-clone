@@ -1,15 +1,15 @@
 import { Component, Input } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+    RouterTestingModule
+} from '@angular/router/testing';
 
 import { ItemsSortOrder } from '../shared/items/itemsSortOrder';
 
-import { HomeComponent } from './home.component';
+import { ItemListComponent } from './item-list.component';
 
 @Component({selector: 'app-header', template: ''})
 class HeaderStubComponent {}
-
-@Component({selector: 'app-articles', template: ''})
-class ArticlesStubComponent {}
 
 @Component({selector: 'app-items', template: ''})
 class ItemsStubComponent {
@@ -19,32 +19,22 @@ class ItemsStubComponent {
   @Input() isShowMoreItem: boolean;
 }
 
-@Component({selector: 'app-more', template: ''})
-class MoreStubComponent {
-  @Input() url: string;
-}
-
-@Component({selector: 'app-categories', template: ''})
-class CategoriesStubComponent {
-  @Input() countOfCategories: number;
-}
-
 @Component({selector: 'app-footer', template: ''})
 class FooterStubComponent {}
 
-describe('HomeComponent', () => {
-  let component: HomeComponent;
-  let fixture: ComponentFixture<HomeComponent>;
+describe('ItemListComponent', () => {
+  let component: ItemListComponent;
+  let fixture: ComponentFixture<ItemListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule
+      ],
       declarations: [
-        HomeComponent,
+        ItemListComponent,
         HeaderStubComponent,
-        ArticlesStubComponent,
         ItemsStubComponent,
-        CategoriesStubComponent,
-        MoreStubComponent,
         FooterStubComponent
       ]
     })
@@ -52,7 +42,7 @@ describe('HomeComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomeComponent);
+    fixture = TestBed.createComponent(ItemListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

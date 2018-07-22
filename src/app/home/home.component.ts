@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ItemsSortOrder } from './items/itemsSortOrder';
+import { ItemsSortOrder } from '../shared/items/itemsSortOrder';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +12,9 @@ export class HomeComponent implements OnInit {
   readonly itemsSortOrderNew = ItemsSortOrder.New;
   readonly countOfItems = 8;
   readonly countOfCategories = 4;
+  readonly morePopularItemsLink = '/items?sort=popular';
+  readonly moreNewItemsLink = '/items?sort=new';
+  readonly moreNewCategoriesLink = '/categories';
 
   constructor() { }
 

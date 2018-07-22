@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { TopModule } from './top/top.module';
 import { HomeModule } from './home/home.module';
+import { ItemsModule } from './items/items.module';
 
 import { AppComponent } from './app.component';
 
@@ -30,7 +31,8 @@ import { AppComponent } from './app.component';
     AppMaterialModule,
     AppRoutingModule,
     TopModule,
-    HomeModule
+    HomeModule,
+    ItemsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

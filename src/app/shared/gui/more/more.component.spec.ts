@@ -16,6 +16,7 @@ describe('MoreComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(MoreComponent);
     component = fixture.componentInstance;
+    component.url = 'items/new';
     fixture.detectChanges();
   });
 
