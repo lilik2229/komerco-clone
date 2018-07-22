@@ -7,6 +7,8 @@ import { AppRoutingModule } from '../app-routing.module';
 import { MoreComponent } from './gui/more/more.component';
 import { ItemsComponent } from './items/items.component';
 import { ItemComponent } from './items/item/item.component';
+import { HeaderComponent } from './gui/header/header.component';
+import { FooterComponent } from './gui/footer/footer.component';
 
 @NgModule({
   imports: [
@@ -17,11 +19,15 @@ import { ItemComponent } from './items/item/item.component';
   declarations: [
     MoreComponent,
     ItemsComponent,
-    ItemComponent
+    ItemComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   exports: [
     MoreComponent,
-    ItemsComponent
+    ItemsComponent,
+    HeaderComponent,
+    FooterComponent
   ]
 })
 export class SharedModule { }
