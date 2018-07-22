@@ -2,19 +2,26 @@
 
 <div class="app-home-container">
     <app-articles></app-articles>
+    
     <app-items
         title="人気順"
         [itemsSortOrder]=this.itemsSortOrderPopular
         [countOfItems]=this.countOfItems
     ></app-items>
+    <app-more [url]="morePopularItemsLink"></app-more>
+    
     <app-items
         title="新着順"
         [itemsSortOrder]=this.itemsSortOrderNew
         [countOfItems]=this.countOfItems
     ></app-items>
+    <app-more [url]="moreNesItemsLink"></app-more>
+    
     <app-categories
         [countOfCategories]=this.countOfCategories
     ></app-categories>
+    <app-more [url]="moreCategoriesLink"></app-more>
+    
 </div>
 
 <app-footer></app-footer>

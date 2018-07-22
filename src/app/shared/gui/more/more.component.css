@@ -1,3 +1,8 @@
+.app-more-container-all{
+    width: 100%;
+    background-color: #EEEEEE;
+}
+
 .app-more-link{
     text-decoration: none;
 }
@@ -10,5 +15,6 @@
     align-items: center;
     justify-content: center;
     height: 40px;
-    width: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
 }

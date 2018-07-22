@@ -12,7 +12,10 @@ export class HomeComponent implements OnInit {
   readonly itemsSortOrderNew = ItemsSortOrder.New;
   readonly countOfItems = 8;
   readonly countOfCategories = 4;
-
+  readonly morePopularItemsLink = '/items';
+  readonly moreNewItemsLink = '/items';
+  readonly moreNewCategoriesLink = '/categories';
+  
   constructor() { }
 
   ngOnInit() {
