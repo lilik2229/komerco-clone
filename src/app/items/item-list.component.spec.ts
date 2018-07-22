@@ -1,6 +1,25 @@
+import { Component, Input } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {
+    RouterTestingModule
+} from '@angular/router/testing';
+
+import { ItemsSortOrder } from '../shared/items/itemsSortOrder';
 
 import { ItemListComponent } from './item-list.component';
+
+@Component({selector: 'app-header', template: ''})
+class HeaderStubComponent {}
+
+@Component({selector: 'app-items', template: ''})
+class ItemsStubComponent {
+  @Input() title: string;
+  @Input() itemsSortOrder: ItemsSortOrder;
+  @Input() countOfItems: number;
+}
+
+@Component({selector: 'app-footer', template: ''})
+class FooterStubComponent {}
 
 describe('ItemListComponent', () => {
   let component: ItemListComponent;
@@ -8,7 +27,15 @@ describe('ItemListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ItemListComponent ]
+      imports: [
+        RouterTestingModule
+      ],
+      declarations: [
+        ItemListComponent,
+        HeaderStubComponent,
+        ItemsStubComponent,
+        FooterStubComponent
+      ]
     })
     .compileComponents();
   }));
