@@ -3,7 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { AppMaterialModule } from '../app-material.module';
 import { AppRoutingModule } from '../app-routing.module';
+
 import { MoreComponent } from './gui/more/more.component';
+import { ItemsComponent } from './items/items.component';
+import { ItemComponent } from './items/item/item.component';
 
 @NgModule({
   imports: [
@@ -11,6 +14,14 @@ import { MoreComponent } from './gui/more/more.component';
     AppMaterialModule,
     AppRoutingModule
   ],
-  declarations: [MoreComponent]
+  declarations: [
+    MoreComponent,
+    ItemsComponent,
+    ItemComponent
+  ],
+  exports: [
+    MoreComponent,
+    ItemsComponent
+  ]
 })
 export class SharedModule { }

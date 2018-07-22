@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ItemsSortOrder } from './items/itemsSortOrder';
+import { ItemsSortOrder } from '../shared/items/itemsSortOrder';
 
 @Component({
   selector: 'app-home',

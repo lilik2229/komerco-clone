@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ItemsSortOrder } from './items/itemsSortOrder';
+import { ItemsSortOrder } from '../shared/items/itemsSortOrder';
 
 import { HomeComponent } from './home.component';
 
