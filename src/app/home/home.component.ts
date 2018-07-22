@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
   readonly morePopularItemsLink = '/items?sort=popular';
   readonly moreNewItemsLink = '/items?sort=new';
   readonly moreNewCategoriesLink = '/categories';
-  
+
   constructor() { }
 
   ngOnInit() {

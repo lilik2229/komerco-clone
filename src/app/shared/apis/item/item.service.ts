@@ -15,15 +15,15 @@ export class ItemService {
 
   public getPopularItemsWithCountLimit(
     countOfArticles: number,
-    startAfterItem :Item
-  ):Observable<Array<Item>>{   
-    if(startAfterItem === undefined){
+    startAfterItem: Item
+  ): Observable<Array<Item>> {
+    if (startAfterItem === undefined) {
       return this.store
         .collection<Item>('items',
                           ref => ref.orderBy('views', 'desc')
                           .limit(countOfArticles))
         .valueChanges();
-    }else{
+    } else {
       return this.store
         .collection<Item>('items',
                           ref => ref.orderBy('views', 'desc')
@@ -35,15 +35,15 @@ export class ItemService {
 
   public getNewItemsWithCountLimit(
     countOfArticles: number,
-    startAfterItem :Item
+    startAfterItem: Item
   ): Observable<Array<Item>> {
-    if(startAfterItem === undefined){
+    if (startAfterItem === undefined) {
       return this.store
         .collection<Item>('items',
                           ref => ref.orderBy('updatedAt', 'desc')
                           .limit(countOfArticles))
         .valueChanges();
-    }else{
+    } else {
       console.log(startAfterItem);
       return this.store
         .collection<Item>('items',
@@ -53,5 +53,5 @@ export class ItemService {
         .valueChanges();
     }
   }
-  
+
 }

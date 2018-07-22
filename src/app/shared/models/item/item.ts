@@ -5,7 +5,7 @@ export class Item {
   views: number;
   createdAt: any;
   updatedAt: any;
-  
+
   constructor(
     title: string,
     imageSrc: string,

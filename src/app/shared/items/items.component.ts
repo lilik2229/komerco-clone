@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
   templateUrl: './items.component.html',
   styleUrls: ['./items.component.css']
 })
-export class ItemsComponent implements OnInit,OnDestroy {
+export class ItemsComponent implements OnInit, OnDestroy {
   @Input() title: string;
   @Input() itemsSortOrder: ItemsSortOrder;
   @Input() countOfItems: number;
@@ -21,7 +21,7 @@ export class ItemsComponent implements OnInit,OnDestroy {
   totalCountOfItems: number;
   moreLink: string;
   item$: any;
-  
+
   constructor(
     private itemService: ItemService
   ) { }
@@ -32,10 +32,10 @@ export class ItemsComponent implements OnInit,OnDestroy {
     this.setMoreLink(this.itemsSortOrder);
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.item$.unsubscribe();
   }
-  
+
   private setMoreLink(itemsSortOrder: ItemsSortOrder): void {
     if (itemsSortOrder === ItemsSortOrder.Popular) {
       this.moreLink = '/items/popular';
@@ -52,10 +52,10 @@ export class ItemsComponent implements OnInit,OnDestroy {
     let items$;
     if (itemsSortOrder === ItemsSortOrder.Popular) {
       items$ =
-        this.itemService.getPopularItemsWithCountLimit(countOfItems,startAfter);
+        this.itemService.getPopularItemsWithCountLimit(countOfItems, startAfter);
     } else {
       items$ =
-        this.itemService.getNewItemsWithCountLimit(countOfItems,startAfter);
+        this.itemService.getNewItemsWithCountLimit(countOfItems, startAfter);
     }
 
     this.item$ = items$.subscribe(
@@ -81,11 +81,11 @@ export class ItemsComponent implements OnInit,OnDestroy {
     this.items = newItems;
   }
 
-  addItems():void{
+  addItems(): void {
     this.item$.unsubscribe();
     this.totalCountOfItems += this.countOfItems;
     this.setItems(this.totalCountOfItems, this.itemsSortOrder);
-  };  
+  }
 
-  
+
 }

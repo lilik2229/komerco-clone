@@ -11,7 +11,7 @@ import { ItemsSortOrder } from '../shared/items/itemsSortOrder';
 export class ItemListComponent implements OnInit {
   itemsSortOrder = ItemsSortOrder.Popular;
   readonly countOfItems = 1;
-  
+
   constructor(
     private route: ActivatedRoute
   ) { }
@@ -24,12 +24,12 @@ export class ItemListComponent implements OnInit {
       });
   }
 
-  private setItemSortOrder(sortId:string) :void{
-    if(sortId === 'pupular'){
+  private setItemSortOrder(sortId: string): void {
+    if (sortId === 'pupular') {
       this.itemsSortOrder = ItemsSortOrder.Popular;
-    }else if(sortId === 'new'){
+    } else if (sortId === 'new') {
       this.itemsSortOrder = ItemsSortOrder.New;
     }
   }
-    
+
 }

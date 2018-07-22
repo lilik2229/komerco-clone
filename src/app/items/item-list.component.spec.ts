@@ -16,6 +16,7 @@ class ItemsStubComponent {
   @Input() title: string;
   @Input() itemsSortOrder: ItemsSortOrder;
   @Input() countOfItems: number;
+  @Input() isShowMoreItem: boolean;
 }
 
 @Component({selector: 'app-footer', template: ''})
