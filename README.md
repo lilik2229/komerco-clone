@@ -1,6 +1,6 @@
 # KomercoClone
 
-クックパッド社のネイティブアプリ komerco(https://komer.co/)をWebサービスとして写経しました。
+クックパッド社のネイティブアプリkomercoをWebサービスとして写経しました。
 
 # 使用技術
 
