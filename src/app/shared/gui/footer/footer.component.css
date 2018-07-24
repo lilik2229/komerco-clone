@@ -4,3 +4,13 @@
     z-index:100;
     bottom:0;
 }
+
+.app-footer-link-container{
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.app-footer-link-box{
+    margin-left: 10px;
+    margin-rignt: 10px;
+}
