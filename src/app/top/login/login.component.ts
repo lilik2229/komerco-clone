@@ -8,9 +8,9 @@ import { AuthService } from '../../shared/apis/auth/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  email:string='';
-  password:string ='';
-  
+  email = '';
+  password = '';
+
   constructor(
     private authService: AuthService
   ) {}
