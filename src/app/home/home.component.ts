@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   readonly countOfCategories = 4;
   readonly morePopularItemsLink = '/items?sort=popular';
   readonly moreNewItemsLink = '/items?sort=new';
-  readonly moreNewCategoriesLink = '/categories';
+  readonly moreCategoriesLink = '/categories';
 
   constructor() { }
 
